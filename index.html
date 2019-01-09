@@ -93,7 +93,7 @@
       }
     }
 
-    const store = createStore(app);
+    const store = Redux.createStore(app);
 
     store.subscribe(() => {
       const { goals, todos } = store.getState();
