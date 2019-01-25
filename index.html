@@ -8,23 +8,6 @@
   <script src='https://unpkg.com/babel-standalone@6.15.0/babel.min.js'></script>
 </head>
 <body>
-
-  <div>
-    <h1>Todo List</h1>
-    <input id="todo" type="text" placeholder="Add Todo">
-    <button id="todoBtn">Add Todo</button>
-    <ul id="todos"></ul>
-  </div>
-
-  <div>
-    <h1>Goals</h1>
-    <input id="goal" type="text" placeholder="Add Goal">
-    <button id="goalBtn">Add Goal</button>
-    <ul id="goals"></ul>
-  </div>
-
-  <hr />
-
   <div id='app'></div>
 
   <script type='text/javascript'>
@@ -125,17 +108,6 @@
       todos,
       goals,
     }), Redux.applyMiddleware(checker, logger));
-
-    store.subscribe(() => {
-      const { goals, todos } = store.getState();
-
-      //reset view of current todo/goal items to match current store
-      document.getElementById('todos').innerHTML = '';
-      document.getElementById('goals').innerHTML = '';
-
-      goals.forEach(addGoalToDOM);
-      todos.forEach(addTodoToDOM);
-    })
 
   </script>
 
